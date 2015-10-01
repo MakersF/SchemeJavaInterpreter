@@ -1,0 +1,14 @@
+class A {
+
+  var x = 100;
+  var y = 10;
+
+  add(g, h) {
+    return g + h;
+  }
+
+  static main() {
+    var a = new A();
+    return a.add(a.x, a.y);
+  }
+}

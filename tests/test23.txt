@@ -1,0 +1,45 @@
+class NoFilter {
+  passFilter(x) {
+    return true;
+  }
+}
+
+class PrimeFilter {
+  var value;
+  var filter;
+
+  passFilter(x) {
+    if (filter.passFilter(x) && (x % value != 0))
+      return true;
+    else
+      return false;
+  }
+}
+  
+class Primes {
+  static var lastPrime = 2;
+  static var lastFilter = new NoFilter();
+
+  static nprimes(n) {
+    var num = 0;
+    while (num < n) {
+      var filter = new PrimeFilter();
+      filter.value = lastPrime;
+      filter.filter = lastFilter;
+      Primes.lastFilter = filter;
+      
+      var x = lastPrime + 1;
+      while (!filter.passFilter(x))
+        x = x + 1;
+      Primes.lastPrime = x;
+      num = num + 1;
+    }
+    return Primes.lastPrime;
+  }
+
+  static main() {
+     nprimes(3);
+     nprimes(3);
+     return lastPrime;
+  }
+}

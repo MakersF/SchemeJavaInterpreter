@@ -1,0 +1,39 @@
+class A {
+  var x = 1;
+  var y = 2;
+
+  m() {
+    return this.m2();
+  }
+
+  m2() {
+    return x+y;
+  }
+}
+
+class B extends A {
+  var y = 22;
+  var z = 3;
+
+  m() {
+    return super.m();
+  }
+
+  m2() {
+    return x+y+z;
+  }
+}
+
+class C extends B {
+  var y = 222;
+  var w = 4;
+
+  m() {
+    return super.m();
+  }
+
+  static main() {
+    var c = new C();
+    return c.m();
+  }
+}

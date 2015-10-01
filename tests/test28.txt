@@ -1,0 +1,18 @@
+class A {
+  static main() {
+    var count = 0;
+    var x = 1;
+
+    while (x < 10) {
+      x = x + 1;
+      try {
+        count = count + 1;
+        continue;
+      }
+      finally {
+        count = count + 1;
+      }
+    }
+    return count;
+  }
+}

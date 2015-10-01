@@ -1,0 +1,11 @@
+class A {
+
+  add(g, h) {
+    return g + h;
+  }
+
+  static main() {
+    var a = new A();
+    return a.add(10, 2);
+  }
+}

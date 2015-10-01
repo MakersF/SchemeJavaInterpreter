@@ -1,0 +1,11 @@
+class A {
+  static main() {
+    try {
+      throw new A();
+      return 100;
+    }
+    catch (e) {
+      return 10;
+    }
+  }
+}

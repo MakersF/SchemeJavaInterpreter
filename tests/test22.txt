@@ -1,0 +1,29 @@
+class List {
+  var val;
+  var next;
+
+  getNext() {
+    return next;
+  }
+
+  setNext(x) {
+    if (x == 0)
+      next = 0;
+    else {
+      next = new List();
+      next.setVal(val+1);
+      next.setNext(x-1);
+    }
+  }
+
+  setVal(x) {
+    val = x;
+  }
+
+  static main() {
+    var l = new List();
+    l.setVal(10);
+    l.setNext(5);
+    return l.getNext().getNext().getNext().getNext().getNext().val;
+  }
+}
